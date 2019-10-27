@@ -30,11 +30,17 @@ todoList =
   , Todo 2 "Haskellで仕事する" False
   , Todo 3 "寝る" False
   ]
+todoList2 :: [Todo]
+todoList2 =
+  [ Todo 1 "hogehoge" True
+  , Todo 2 "fugafuga" False
+  , Todo 3 "piyo" False
+  ]
 
 -- | サーバーの実装
 server :: Server API
 server =    pure todoList
-       :<|> pure todoList
+       :<|> pure todoList2
 
 main :: IO ()
 main = do

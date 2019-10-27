@@ -24,18 +24,15 @@ dependencies:
 - servant
 
 library:
-  source-dirs: src
+  source-dirs: hoge
+  dependencies:
+    - aeson
+    - http-api-data
+    - servant
+    - text
+
 
 executables:
-  sample-exe:
-    main:                Main.hs
-    source-dirs:         app
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - sample
   simple:
     main:                Main.hs
     source-dirs:         simple
@@ -50,6 +47,16 @@ executables:
     - servant-client
     - warp
     - QuickCheck
+  jque:
+    main:                Main.hs
+    source-dirs:         jque
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - servant-js
+    - sample
 
 
 tests:
